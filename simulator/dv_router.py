@@ -57,6 +57,10 @@ class DVRouter(DVRouterBase):
         self.table = Table()
         self.table.owner = self
 
+        ##### Begin Stage 10A #####
+
+        ##### End Stage 10A #####
+
     def add_static_route(self, host, port):
         """
         Adds a static route to this router's table.
@@ -72,7 +76,9 @@ class DVRouter(DVRouterBase):
         # when the link came up.
         assert port in self.ports.get_all_ports(), "Link should be up, but is not."
 
-        # TODO: fill this in!
+        ##### Begin Stage 1 #####
+
+        ##### End Stage 1 #####
 
     def handle_data_packet(self, packet, in_port):
         """
@@ -84,7 +90,10 @@ class DVRouter(DVRouterBase):
         :param in_port: the port from which the packet arrived.
         :return: nothing.
         """
-        # TODO: fill this in!
+        
+        ##### Begin Stage 2 #####
+
+        ##### End Stage 2 #####
 
     def send_routes(self, force=False, single_port=None):
         """
@@ -97,14 +106,20 @@ class DVRouter(DVRouterBase):
                             be used in conjunction with handle_link_up.
         :return: nothing.
         """
-        # TODO: fill this in!
+        
+        ##### Begin Stages 3, 6, 7, 8, 10 #####
+
+        ##### End Stages 3, 6, 7, 8, 10 #####
 
     def expire_routes(self):
         """
         Clears out expired routes from table.
         accordingly.
         """
-        # TODO: fill this in!
+        
+        ##### Begin Stages 5, 9 #####
+
+        ##### End Stages 5, 9 #####
 
     def handle_route_advertisement(self, route_dst, route_latency, port):
         """
@@ -115,7 +130,10 @@ class DVRouter(DVRouterBase):
         :param port: the port that the advertisement arrived on.
         :return: nothing.
         """
-        # TODO: fill this in!
+        
+        ##### Begin Stages 4, 10 #####
+
+        ##### End Stages 4, 10 #####
 
     def handle_link_up(self, port, latency):
         """
@@ -127,7 +145,9 @@ class DVRouter(DVRouterBase):
         """
         self.ports.add_port(port, latency)
 
-        # TODO: fill in the rest!
+        ##### Begin Stage 10B #####
+
+        ##### End Stage 10B #####
 
     def handle_link_down(self, port):
         """
@@ -138,6 +158,8 @@ class DVRouter(DVRouterBase):
         """
         self.ports.remove_port(port)
 
-        # TODO: fill this in!
+        ##### Begin Stage 10B #####
+
+        ##### End Stage 10B #####
 
     # Feel free to add any helper methods!
